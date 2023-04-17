@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
 import Search from './Search/Search';
 import MoviesList from './MoviesList/MoviesList';
@@ -33,9 +34,14 @@ function Movies({
   onCatch,
   onSetCatch,
 }) {
+  // REDUX
+  const dispatch = useDispatch();
+  const saveMoviesRedux = useSelector((state) => state.movies);
+  console.log('saveMoviesRedux :>> ', saveMoviesRedux);
+
   const navigate = useNavigate();
   let movies = savedMoviesStatus
-    ? Array.from(onMoviesSave)
+    ? Array.from(saveMoviesRedux)
     : Array.from(onMovies);
 
   useEffect(() => {
@@ -46,6 +52,7 @@ function Movies({
   async function Like(arg) {
     await likeMovies(arg)
       .then(() => {
+        dispatch({type: 'add_like', payload: arg});
         onRender(1);
       })
       .catch(() => {
@@ -54,8 +61,14 @@ function Movies({
   }
 
   async function disLike(arg) {
-    onRender(1);
-    await disLakeMovies(arg);
+    await disLakeMovies(arg)
+      .then(() => {
+        dispatch({type: 'del_like', payload: arg});
+        onRender(1);
+      })
+      .catch(() => {
+        onSetCatch('Проблемы с тырнетом');
+      });
   }
 
   return (

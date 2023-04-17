@@ -23,6 +23,7 @@ import Landing from './Landing/Landing';
 import Movies from './Movies/Movies';
 import Profile from '../Profile/Profile';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import {NewLogin} from '../Login/newLogin';
 
 function App() {
   // CONSTANTS
@@ -258,7 +259,7 @@ function App() {
             <Route
               path="/signin"
               element={
-                <Login
+                <NewLogin
                   setCurrentUser={setCurrentUser}
                   onLogin={handlerLogin}
                 />
