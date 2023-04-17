@@ -1,12 +1,12 @@
 import headerLogo from '../../image/header-logo.svg';
 
 import {useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import {login} from '../../utils/MainApi';
 import {apiErrorController} from '../../utils/errorController';
 import {validationPassword, validationEmail} from './utils';
 
-import styles from './login.module.css';
+import styles from './login.module.scss';
 
 export const NewLogin = ({onLogin, setCurrentUser}) => {
   const navigate = useNavigate();
@@ -74,9 +74,15 @@ export const NewLogin = ({onLogin, setCurrentUser}) => {
 
   return (
     <div className={styles.container}>
+      <img
+        className={styles.header_logo}
+        src={headerLogo}
+        alt="логотип"
+        onClick={() => navigate('/')}
+      />
       <div className={styles.form_box}>
         <div className={styles.form_value}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2>Вход</h2>
             <div className={styles.inputbox}>
               <ion-icon
@@ -84,11 +90,15 @@ export const NewLogin = ({onLogin, setCurrentUser}) => {
                 name="person-circle-outline"
               ></ion-icon>
               <input
+                value={email ? email : ''}
+                onChange={handleInputEmail}
                 className={styles.input}
                 type="email"
+                disabled={isLoading}
               ></input>
               <label className={styles.inputbox_label}>Почта</label>
             </div>
+            <span className={styles.input_error}>{errorEmail}</span>
             <div className={styles.inputbox}>
               <ion-icon
                 className={styles.ion_icon}
@@ -97,29 +107,35 @@ export const NewLogin = ({onLogin, setCurrentUser}) => {
               <input
                 className={styles.input}
                 type="password"
+                value={password ? password : ''}
+                onChange={handleInputPassword}
+                disabled={isLoading}
               ></input>
               <label className={styles.inputbox_label}>Пароль</label>
             </div>
+            <span className={styles.input_error}>{errorPassword}</span>
             <div className={styles.bottom}>
               <div className={styles.left}>
                 <input
                   type={'checkbox'}
                   id="check"
                 ></input>
-                <label htmlFor="check">Запомнить меня</label>
+                <label htmlFor="check">Запомнить</label>
               </div>
               <div className={styles.right}>
                 <label>
-                  <a
+                  <Link
                     className={styles.label_a}
                     href="./"
+                    to={'/signup'}
                   >
                     Зарегистрироваться
-                  </a>
+                  </Link>
                 </label>
               </div>
             </div>
             <button className={styles.button}>Войти</button>
+            <span className={styles.input_error}>{errorApi}</span>
           </form>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {CheckBox} from './CheckBox/CheckBox';
 
 function Search({
   savedMoviesStatus,
@@ -111,12 +112,18 @@ function Search({
       {validMess ? <p className="search__span">{validMess}</p> : ''}
 
       <div className="search__option-container">
-        <button
+        {/* <button
           className={
             buttonState ? 'search__option-button' : 'search__option-button_off'
           }
           onClick={savedMoviesStatus ? handleShortSave : handleShort}
-        ></button>
+        ></button> */}
+        <CheckBox
+          savedMoviesStatus={savedMoviesStatus}
+          handleShortSave={handleShortSave}
+          handleShort={handleShort}
+          buttonState={buttonState}
+        ></CheckBox>
         <span className="search__option-span">Короткометражки</span>
       </div>
     </section>

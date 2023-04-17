@@ -88,6 +88,9 @@
 }
 
 .search__option-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding-left: 12px;
 
