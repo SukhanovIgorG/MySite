@@ -19,7 +19,7 @@ import {
 } from './constants/constants';
 
 // COMPONENTS
-import {Movies, Profile, Login, Register, Landing, ErrorPage} from './pages';
+import {Movies, Profile, Dialog, Register, Landing, ErrorPage} from './pages';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
@@ -243,7 +243,7 @@ function App() {
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
         <HashRouter>
-          <Routes>
+          {/* <Routes>
             <Route
               path="/signup"
               element={
@@ -252,11 +252,23 @@ function App() {
                   onLogin={handlerLogin}
                 />
               }
+            /> */}
+          <Routes>
+            <Route
+              path="/signup"
+              element={
+                <Dialog
+                  type={'signup'}
+                  setCurrentUser={setCurrentUser}
+                  onLogin={handlerLogin}
+                />
+              }
             />
             <Route
               path="/signin"
               element={
-                <Login
+                <Dialog
+                  type={'signin'}
                   setCurrentUser={setCurrentUser}
                   onLogin={handlerLogin}
                 />

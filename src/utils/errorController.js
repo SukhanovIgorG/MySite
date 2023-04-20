@@ -1,15 +1,9 @@
-exports.apiErrorController = (err) => {
-  if (err.status === 409) {
-    return 'пользователь с таким e-mail уже существует';
-  } else if (err.status === 401) {
-    return 'ошибка автризации';
-  } else if (err.status === 500) {
-    return 'на сервере произошла ошибка, повтоите запрос позже';
-  } else if (err.status === 400) {
-    return 'заполните все поля корректными данными';
+export function apiErrorController(err) {
+  if (err.code === 'auth/user-not-found') {
+    return 'не правильный логин или пароль';
+  } else if (err.code === 'auth/email-already-in-use') {
+    return 'Пользователь с таким email уже существует';
   } else {
     return 'что-то пошло не так, возможно проблема с интернетом';
   }
-};
-
-//TODO: Добавить коды ошибок от Fire Base
+}

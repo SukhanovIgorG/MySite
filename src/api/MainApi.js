@@ -21,29 +21,64 @@ const usersRef = collection(db, 'users');
 let userId = localStorage.getItem('userId');
 const userRef = userId ? doc(db, 'users', userId) : null;
 
-export const register = ({name, email, password}) => {
-  return createUserWithEmailAndPassword(auth, email, password).then(
-    (userCredential) => {
-      const newUser = userCredential.user;
-      setDoc(doc(usersRef, newUser.uid), {
-        name: name,
-        email: email,
-        password: password,
-        movies: [],
-        createdAt: newUser.metadata.createdAt,
-        creationTime: newUser.metadata.creationTime,
-      });
-      return newUser;
-    }
-  );
+export const fireBaseAuthApi = async ({
+  type,
+  name = 'new user',
+  email,
+  password,
+}) => {
+  if (type === 'signup') {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const newUser = userCredential.user;
+    setDoc(doc(usersRef, newUser.uid), {
+      name: name,
+      email: email,
+      password: password,
+      movies: [],
+      createdAt: newUser.metadata.createdAt,
+      creationTime: newUser.metadata.creationTime,
+    });
+    return userCredential;
+  }
+  if (type === 'signin') {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return userCredential;
+  }
 };
 
-export const login = ({email, password}) => {
+export const registerApi = async ({name, email, password}) => {
+  console.log('registerApi :>> ');
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  const newUser = userCredential.user;
+  setDoc(doc(usersRef, newUser.uid), {
+    name: name,
+    email: email,
+    password: password,
+    movies: [],
+    createdAt: newUser.metadata.createdAt,
+    creationTime: newUser.metadata.creationTime,
+  });
+  return newUser;
+};
+
+export const loginApi = ({email, password}) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
 
 export const getUserInfo = async () => {
-  const userInfo = await getDoc(userRef);
+  const userInfo = userRef ? await getDoc(userRef) : null;
   if (userInfo.exists()) {
     return userInfo.data();
   } else {

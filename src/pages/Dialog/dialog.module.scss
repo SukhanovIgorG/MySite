@@ -29,8 +29,7 @@
   top: 20px;
   left: 40px;
 }
-
-.form_box {
+@mixin form_box {
   padding: 20px;
 
   position: relative;
@@ -44,12 +43,38 @@
   justify-content: center;
   align-items: center;
 }
+.form_box_log {
+  @include form_box;
+  height: 450px;
+}
+
+.form_box_reg {
+  @include form_box;
+  height: 575px;
+}
+
+form {
+  width: min-content;
+}
 
 .inputbox {
   position: relative;
   margin: 30px 0 0;
   width: 310px;
   border-bottom: 2px solid #fff;
+
+  .ion_icon {
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+    border-radius: 40px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+  }
 }
 
 .inputbox_label {
@@ -82,6 +107,10 @@ input:not(:placeholder-shown) ~ .inputbox_label {
   color: #fff;
 }
 
+.input:invalid {
+  color: red;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -99,6 +128,7 @@ select:-webkit-autofill:focus {
   text-align: left;
   display: inline-block;
   width: 100%;
+  height: 25px;
 
   font-style: normal;
   font-weight: 500;
@@ -113,19 +143,6 @@ select:-webkit-autofill:focus {
 }
 .input:blur {
   background: transparent;
-}
-
-ion-icon {
-  position: absolute;
-  right: 5px;
-  bottom: 15px;
-  border-radius: 40px;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
 }
 
 .bottom {
@@ -154,17 +171,26 @@ ion-icon {
 }
 
 @media screen and (max-width: 768px) {
-  .form_box {
-    position: relative;
-    width: 300px;
-    height: 450px;
+  @mixin form_box {
+    width: 280px;
+  }
+  .form_box_log {
+    @include form_box;
+  }
+
+  .form_box_reg {
+    @include form_box;
   }
 
   .inputbox {
-    width: 90%;
+    width: 280px;
   }
 
   .label_a {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .input_error {
+    font-size: 10px;
   }
 }
