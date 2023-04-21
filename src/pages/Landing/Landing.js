@@ -3,8 +3,8 @@ import {Footer, Header} from '../../components';
 
 import About from './About/About';
 import Tech from './Tech/Tech';
-import Student from './Student/Student';
-import Hero from './Hero/Hero';
+import {Resume} from './Resume/Resume';
+import {Portfolio} from './Portfolio/Portfolio';
 
 export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
   return (
@@ -14,10 +14,10 @@ export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
         className="landing"
         component={'main'}
       >
-        <Hero />
+        <Resume />
+        <Portfolio />
         <About />
         <Tech />
-        <Student />
       </Box>
       <Footer />
     </>

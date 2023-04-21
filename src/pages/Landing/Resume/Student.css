@@ -79,71 +79,6 @@
   background-size: cover;
 }
 
-.student__portfolio-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 100px 0 0 0;
-
-  width: 100%;
-}
-
-.student__portfolio-title {
-  margin: 0;
-  padding: 0 0 32px 0;
-
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-  text-align: left;
-  /* identical to box height, or 111% */
-
-  color: #a0a0a0;
-
-  mix-blend-mode: normal;
-}
-
-.student__portfolio-item {
-  width: 100%;
-  height: 89px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  border-bottom: #e8e8e8 1px solid;
-}
-
-.student__portfolio-item:last-child {
-  border: none;
-}
-
-.student__portfolio-link {
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
-  /* identical to box height, or 167% */
-
-  letter-spacing: -0.04em;
-
-  color: #000000;
-}
-.student__portfolio-icon {
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 60px;
-  /* identical to box height, or 200% */
-
-  letter-spacing: -0.04em;
-
-  color: #000000;
-}
-
 @media screen and (max-width: 768px) {
   .student__resume-paragraph {
     max-width: 450px;
@@ -180,37 +115,8 @@
     height: 307px;
     width: 255px;
   }
-
-  .student__portfolio-title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 50px;
-  }
-  .student__resume-link {
-    padding-top: 87px;
-  }
-
-  .student__portfolio-title {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
-  }
-
-  .student__portfolio-link {
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 50px;
-  }
-
-  .student__portfolio-list {
-    padding-top: 90px;
-  }
-
-  .student__portfolio-item {
-    height: 88px;
-  }
 }
+
 @media screen and (max-width: 580px) {
   .student {
     padding: 81px 14px 72px 14px;
@@ -248,32 +154,5 @@
   }
   .student__resume-link {
     padding-top: 40px;
-  }
-
-  .student__portfolio-list {
-    padding-top: 70px;
-  }
-
-  .student__portfolio-title {
-    padding-bottom: 21px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .student__portfolio-link {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .student__portfolio-icon {
-    width: 18px;
-    height: 28px;
-
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .student__portfolio-item {
-    height: 67px;
   }
 }

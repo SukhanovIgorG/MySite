@@ -1,12 +1,12 @@
 {
-  "name": "movies-explorer-frontend",
+  "name": "sukhanov_web",
   "version": "1.0.0",
-  "description": "service for movies",
+  "description": "my web site",
   "main": "index.js",
-  "homepage": "https://SukhanovIgorG.github.io/movies-explorer-frontend/",
+  "homepage": "https://SukhanovIgorG.github.io/MySite/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SukhanovIgorG/movies-explorer-frontend.git"
+    "url": "git+https://github.com/SukhanovIgorG/MySite.git"
   },
   "author": "Sukhanov Igor",
   "license": "ISC",

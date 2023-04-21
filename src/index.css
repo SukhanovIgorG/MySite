@@ -5,10 +5,8 @@
 
 @import url(../src/App.css);
 
-@import url(./pages/Landing/Hero/Hero.css);
 @import url(./pages/Landing/About/About.css);
 @import url(./pages/Landing/Tech/Tech.css);
-@import url(./pages/Landing/Student/Student.css);
 @import url(./components/Footer/footer.css);
 @import url(./pages/Movies/Movies.css);
 @import url(./pages/Movies/Search/Search.css);
