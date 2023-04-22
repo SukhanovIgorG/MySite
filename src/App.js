@@ -243,16 +243,6 @@ function App() {
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
         <HashRouter>
-          {/* <Routes>
-            <Route
-              path="/signup"
-              element={
-                <Register
-                  setCurrentUser={setCurrentUser}
-                  onLogin={handlerLogin}
-                />
-              }
-            /> */}
           <Routes>
             <Route
               path="/signup"
