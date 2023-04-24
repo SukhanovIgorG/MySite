@@ -73,12 +73,12 @@ export const Dialog = ({ type, onLogin, setCurrentUser }: DialogProps) => {
             </Typography>
             {registerType && <><Box className={styles.inputbox}>
               <AccountCircle className={styles.ion_icon}></AccountCircle>
-              <input
+              <Box component="input"
                 {...register("name")}
                 className={styles.input}
                 type="name"
                 disabled={isLoading}
-              ></input>
+              ></Box>
               <Box
                 component={'label'}
                 className={styles.inputbox_label}
@@ -94,12 +94,12 @@ export const Dialog = ({ type, onLogin, setCurrentUser }: DialogProps) => {
               </Box></>}
             <Box className={styles.inputbox}>
               <AccountCircle className={styles.ion_icon}></AccountCircle>
-              <input
+              <Box component="input"
                 {...register("email")}
                 className={styles.input}
                 type="email"
                 disabled={isLoading}
-              ></input>
+              ></Box>
               <Box
                 component={'label'}
                 className={styles.inputbox_label}
@@ -115,12 +115,12 @@ export const Dialog = ({ type, onLogin, setCurrentUser }: DialogProps) => {
             </Box>
             <Box className={styles.inputbox}>
               <Lock className={styles.ion_icon}></Lock>
-              <input
+              <Box component="input"
                 className={styles.input}
                 type="password"
                 {...register("password")}
                 disabled={isLoading}
-              ></input>
+              ></Box>
               <Box
                 component={'label'}
                 className={styles.inputbox_label}
@@ -137,10 +137,10 @@ export const Dialog = ({ type, onLogin, setCurrentUser }: DialogProps) => {
             <Box className={styles.bottom}>
               <Box className={styles.left}>
                 {!registerType &&
-                  <><input
+                  <><Box component="input"
                     type={'checkbox'}
                     id="check"
-                  ></input>
+                  ></Box>
                     <Box
                       component={'label'}
                       htmlFor="check"
