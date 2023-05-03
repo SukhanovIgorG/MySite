@@ -11,8 +11,8 @@ export const Portfolio = () => {
     <Box className={styles.container}>
       <ul className={styles.list}>
         <p className={styles.title}>Портфолио</p>
-        {Items.map((item) => (
-          <PortfolioItem item={item}></PortfolioItem>
+        {Items.map((item, index) => (
+          <PortfolioItem item={item} key={index}></PortfolioItem>
         ))}
       </ul>
     </Box>

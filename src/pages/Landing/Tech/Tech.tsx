@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material'
 
-import { TechFrontItems } from './constants';
+import { TechFrontItems, TechBackItems, TechOtherItems } from './constants';
 
 import styles from './Tech.module.scss'
 import { TechItem } from './TechItem';
@@ -13,8 +13,20 @@ export const Tech = () => {
       <Box className={styles.wrapper}>
         <Box className={styles.title}>Технологии</Box>
         <Box className={styles.container}>
-          <Box className={styles.line}><Typography className={styles.line_title}>Фронтэнд:</Typography>{TechFrontItems.map((item) => { return <TechItem item={item} /> })}</Box>
+          <Box className={styles.box_line}>
+            <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Фронтэнд:</Typography></Box>
+              {TechFrontItems.map((item, key) => { return <TechItem item={item} key={key} /> })}
+            </Box>
 
+
+            <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Бэкэнд:</Typography></Box>
+              {TechBackItems.map((item, key) => { return <TechItem item={item} key={key} /> })}
+            </Box>
+
+            <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Другое:</Typography></Box>
+              {TechOtherItems.map((item, key) => { return <TechItem item={item} key={key} /> })}
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

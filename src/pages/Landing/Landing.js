@@ -1,7 +1,6 @@
 import {Box} from '@mui/material';
 import {Footer, Header} from '../../components';
 
-import About from './About/About';
 import {Tech} from './Tech/Tech';
 import {Resume} from './Resume/Resume';
 import {Portfolio} from './Portfolio';
@@ -16,7 +15,6 @@ export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
       >
         <Resume />
         <Portfolio />
-        <About />
         <Tech />
       </Box>
       <Footer />
