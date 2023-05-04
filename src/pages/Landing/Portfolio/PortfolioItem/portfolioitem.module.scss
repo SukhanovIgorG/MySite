@@ -22,8 +22,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  border-bottom: #e8e8e8 1px solid;
 }
 
 .item:last-child {
@@ -36,11 +34,9 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 50px;
-  /* identical to box height, or 167% */
+  color: #fff;
 
   letter-spacing: -0.04em;
-
-  color: #000000;
 }
 .icon {
   text-decoration: none;
@@ -48,11 +44,9 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 60px;
-  /* identical to box height, or 200% */
 
   letter-spacing: -0.04em;
-
-  color: #000000;
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {

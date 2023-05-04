@@ -1,32 +1,36 @@
+import {Box, Divider, Link, Typography} from '@mui/material';
+import style from './Footer.module.scss';
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-      <p className="footer__title">
-        Учебный проект Яндекс.Практикум х BeatFilm.
-      </p>
-      <div className="footer__container">
-        <p className="footer__text">© {currentYear}</p>
-        <div className="footer__nav-container">
-          <a
-            className="footer__text footer__text_link"
-            href="https://practicum.yandex.ru/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Яндекс.Практикум
-          </a>
-          <a
-            className="footer__text footer__text_link"
+    <Box
+      component="footer"
+      className={style.footer}
+    >
+      <Link
+        className={style.text_link}
+        href="https://t.me/garik_sukhanov"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Typography className={style.title}>Author @garik_sukhanov</Typography>{' '}
+      </Link>
+      <Divider color="#fff" />
+      <Box className={style.container}>
+        <Typography className={style.text}>© {currentYear}</Typography>
+        <Box className={style.nav_container}>
+          <Link
+            className={style.text_link}
             href="https://github.com/SukhanovIgorG"
             target="_blank"
             rel="noreferrer"
           >
-            Github
-          </a>
-        </div>
-      </div>
-    </footer>
+            <Typography className={style.text}>Github</Typography>
+          </Link>
+        </Box>
+      </Box>
+    </Box>
   );
 };

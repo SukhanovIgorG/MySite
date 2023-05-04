@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Divider } from '@mui/material'
 
 import { TechFrontItems, TechBackItems, TechOtherItems } from './constants';
 
@@ -17,11 +17,12 @@ export const Tech = () => {
             <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Фронтэнд:</Typography></Box>
               {TechFrontItems.map((item, key) => { return <TechItem item={item} key={key} /> })}
             </Box>
-
+            <Divider color="#fff" />
 
             <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Бэкэнд:</Typography></Box>
               {TechBackItems.map((item, key) => { return <TechItem item={item} key={key} /> })}
             </Box>
+            <Divider color="#fff" />
 
             <Box className={styles.line}><Box className={styles.item_title} ><Typography className={styles.line_title}>Другое:</Typography></Box>
               {TechOtherItems.map((item, key) => { return <TechItem item={item} key={key} /> })}

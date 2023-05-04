@@ -5,30 +5,32 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-}
 
-.list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+  }
 
-  width: 100%;
-}
+  .title {
+    margin: 0;
+    padding: 0 0 32px 0;
 
-.title {
-  margin: 0;
-  padding: 0 0 32px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 20px;
+    text-align: left;
 
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-  text-align: left;
-  /* identical to box height, or 111% */
+    color: #fff;
 
-  color: #a0a0a0;
-
-  mix-blend-mode: normal;
+    mix-blend-mode: normal;
+  }
+  .divider {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (max-width: 768px) {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 // import { PortfolioItemProps } from './';
 
-import styles from './portfolioitem.module.scss';
+import styles from './Portfolioitem.module.scss';
 
 export interface PortfolioItemProps {
   item: {
@@ -14,7 +14,7 @@ export interface PortfolioItemProps {
 
 export const PortfolioItem = ({ item }: PortfolioItemProps) => {
   const { title, link } = item
-  return (
+  return (<>
     <Box component="li" className={styles.item}>
       <Box component="a"
         className={styles.link}
@@ -33,5 +33,7 @@ export const PortfolioItem = ({ item }: PortfolioItemProps) => {
         ↗
       </Box>
     </Box>
+    <Divider color="#fff"></Divider>
+  </>
   );
 }

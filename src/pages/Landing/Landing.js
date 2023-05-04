@@ -5,9 +5,11 @@ import {Tech} from './Tech/Tech';
 import {Resume} from './Resume/Resume';
 import {Portfolio} from './Portfolio';
 
+import style from './Landing.module.scss';
+
 export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
   return (
-    <>
+    <Box className={style.container}>
       <Header loggedIn={loggedIn} />
       <Box
         className="landing"
@@ -18,6 +20,6 @@ export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
         <Tech />
       </Box>
       <Footer />
-    </>
+    </Box>
   );
 };
