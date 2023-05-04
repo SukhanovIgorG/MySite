@@ -1,0 +1,81 @@
+.menu_container_open {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.menu_container_closed {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.burger_button_closed {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  @mixin burger_button {
+    visibility: visible;
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .burger_button_open {
+    z-index: 10;
+    @include burger_button;
+
+    background-image: url('../../image/menu-button-open.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .menu_container_open {
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    backdrop-filter: blur(5px);
+
+    .menuItem {
+      visibility: visible;
+      margin: 20px 0;
+    }
+  }
+
+  .menu_container_closed {
+    visibility: hidden;
+    .menuItem {
+      visibility: hidden;
+    }
+  }
+  .burger_button_closed {
+    @include burger_button;
+    background-image: url('../../image/menu-button.svg');
+    background-repeat: 3;
+    background-position: center;
+  }
+}
+
+.menuItem {
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: small;
+  color: purple;
+}

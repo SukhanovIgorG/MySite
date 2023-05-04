@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "resolveUrlLoader": {
+      "keepQuery": true
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "typeRoots": ["./types"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "resolveExtensions": [".ts", ".tsx", ".js", ".jsx", ".scss"],
+  "module": "esnext",
+  "moduleResolution": "node",
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true,
+  "resolveJsonModule": true,
+  "resolveUrlLoader": {
+    "keepQuery": true
+  },
+  "skipLibCheck": true,
+  "strict": true,
+  "forceConsistentCasingInFileNames": true,
+  "isolatedModules": true,
+  "rules": [
+    {
+      "test": ".scss",
+      "use": [
+        {
+          "loader": "sass-loader"
+        }
+      ]
+    }
+  ]
+}
