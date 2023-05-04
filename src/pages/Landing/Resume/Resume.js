@@ -24,28 +24,26 @@ export const Resume = () => {
     >
       <Typography className={styles.block__title}>Резюме</Typography>
       <Divider color="#fff"></Divider>
-      <Box className={styles.student__container}>
-        <Box className={styles.container}>
-          <Box className={styles.text}>
-            <Typography className={styles.title}>Привет, я Игорь</Typography>
-            <Typography className={styles.subtitle}>
-              Фронтенд-разработчик. {myAge} год.
-            </Typography>
-            <Typography className={styles.paragraph}>
-              На этой странице вы можете подробнее узнать обо мне, моих работах
-              и найти ссылки для связи со мной
-            </Typography>
-            <Link
-              className={styles.link}
-              href="https://github.com/SukhanovIgorG"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </Link>
-          </Box>
-          <Box className={styles.photo} />
+      <Box className={styles.container}>
+        <Box className={styles.text}>
+          <Typography className={styles.title}>Привет, я Игорь</Typography>
+          <Typography className={styles.subtitle}>
+            Фронтенд-разработчик. {myAge} год.
+          </Typography>
+          <Typography className={styles.paragraph}>
+            На этой странице вы можете подробнее узнать обо мне, моих работах и
+            найти ссылки для связи со мной
+          </Typography>
+          <Link
+            className={styles.link}
+            href="https://github.com/SukhanovIgorG"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </Link>
         </Box>
+        <Box className={styles.photo} />
       </Box>
     </Box>
   );

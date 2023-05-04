@@ -37,17 +37,31 @@
 }
 
 @media screen and (max-width: 768px) {
-  .item {
-    width: 84px;
-    height: 57px;
+  .item_container {
+    text-decoration: none;
 
-    font-size: 12px;
-    line-height: 15px;
+    .item {
+      width: 84px;
+      height: 57px;
+
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 }
 
 @media screen and (max-width: 580px) {
-  .item {
-    margin: 0;
+  .item_container {
+    text-decoration: none;
+
+    .item {
+      margin: 0;
+
+      width: 55px;
+      height: 40px;
+
+      font-size: 11px;
+      line-height: 14px;
+    }
   }
 }

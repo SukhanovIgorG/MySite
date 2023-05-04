@@ -134,45 +134,46 @@
       font-size: 22px;
       line-height: 27px;
     }
-  }
+    .title {
+      padding: 78px 0 78px 0;
+      font-size: 30px;
+    }
 
-  .title {
-    padding: 78px 0 78px 0;
-    font-size: 30px;
-  }
+    .item {
+      width: 84px;
+      height: 57px;
 
-  .item {
-    width: 84px;
-    height: 57px;
-
-    font-size: 12px;
-    line-height: 15px;
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 }
 
 @media screen and (max-width: 580px) {
-  .tech {
-    background-color: #ffffff;
+  .block {
     .title {
       padding: 59px 0;
       font-size: 30px;
       line-height: 36px;
     }
-  }
 
-  .wrapper {
-    padding-right: 4px;
-  }
+    .wrapper {
+      padding-right: 4px;
 
-  .container {
-    max-width: 178px;
-    gap: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+      .container {
+        max-width: 178px;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .line {
+          justify-content: center;
 
-  .item {
-    margin: 0;
+          .item {
+            margin: 0;
+          }
+        }
+      }
+    }
   }
 }
