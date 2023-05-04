@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MySite/static/css/main.e9d435f3.css",
-    "main.js": "/MySite/static/js/main.a21a3982.js",
+    "main.css": "/MySite/static/css/main.b5a89baf.css",
+    "main.js": "/MySite/static/js/main.6c99fa63.js",
     "static/media/back.jpg": "/MySite/static/media/back.70b8d2cb2f9edf133a23.jpg",
     "static/media/photo_my.jpg": "/MySite/static/media/photo_my.699ea462b43a447c6844.jpg",
     "static/media/Inter-Medium.woff?v=3.19": "/MySite/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
@@ -20,11 +20,11 @@
     "static/media/like_active.svg": "/MySite/static/media/like_active.6e2bc92649d2526b70d2.svg",
     "static/media/menu-button-open.svg": "/MySite/static/media/menu-button-open.09da049275af48ed6340.svg",
     "static/media/smalltumb_active.svg": "/MySite/static/media/smalltumb_active.efba29772b9fa12983c6.svg",
-    "main.e9d435f3.css.map": "/MySite/static/css/main.e9d435f3.css.map",
-    "main.a21a3982.js.map": "/MySite/static/js/main.a21a3982.js.map"
+    "main.b5a89baf.css.map": "/MySite/static/css/main.b5a89baf.css.map",
+    "main.6c99fa63.js.map": "/MySite/static/js/main.6c99fa63.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9d435f3.css",
-    "static/js/main.a21a3982.js"
+    "static/css/main.b5a89baf.css",
+    "static/js/main.6c99fa63.js"
   ]
 }
