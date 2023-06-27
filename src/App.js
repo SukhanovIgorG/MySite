@@ -19,8 +19,10 @@ import {
 } from './constants/constants';
 
 // COMPONENTS
-import {Movies, Profile, Dialog, Register, Landing, ErrorPage} from './pages';
+import {Movies, Profile, MyProfile, Dialog, Register, Landing, ErrorPage} from './pages';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
+import styles from './App.module.scss';
 
 function App() {
   // CONSTANTS
@@ -240,7 +242,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={styles.App} >
       <CurrentUserContext.Provider value={currentUser}>
         <HashRouter>
           <Routes>
@@ -364,13 +366,17 @@ function App() {
                 exact
                 path="/profile"
                 element={
-                  <Profile
-                    menuOpen={handlerOpenMenu}
-                    menuClose={handlerCloseMenu}
-                    menuStatus={menuVisible}
-                    onSetCurrentUser={setCurrentUserHandler}
-                    logOut={handleLogOut}
-                  />
+                  // <Profile
+                  //   menuOpen={handlerOpenMenu}
+                  //   menuClose={handlerCloseMenu}
+                  //   menuStatus={menuVisible}
+                  //   onSetCurrentUser={setCurrentUserHandler}
+                  //   logOut={handleLogOut}
+                  // />
+                  <MyProfile
+                    setCurrentUser={setCurrentUserHandler}
+                    onLogOut={handleLogOut}
+                  /> 
                 }
               />
             </Route>

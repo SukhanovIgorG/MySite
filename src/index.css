@@ -3,9 +3,6 @@
 
 @import url(./components/Block/block.css);
 
-@import url(../src/App.css);
-
-@import url(./pages/Movies/Movies.css);
 @import url(./pages/Movies/Search/Search.css);
 @import url(./pages/Movies/MoviesList/Movies-list.css);
 @import url(./pages/Movies/MoviesList/MovieCard/MovieCard.css);
