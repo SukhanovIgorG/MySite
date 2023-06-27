@@ -8,7 +8,9 @@ import {Footer} from '../../components';
 import {Header} from '../../components';
 import Preloader from '../../components/Preloader/Preloader';
 
-import {likeMovies, disLakeMovies} from '../../api/MainApi';
+import { likeMovies, disLakeMovies } from '../../api/MainApi';
+
+import styles from './Movies.module.scss'
 
 export const Movies = ({
   isLoading,
@@ -72,9 +74,9 @@ export const Movies = ({
   }
 
   return (
-    <div className="Movies">
+    <div className={styles.Movies} >
       <Header loggedIn={true} />
-      <main className="Movies-main">
+      <main className={styles.Movies_main}>
         <Search
           savedMoviesStatus={savedMoviesStatus}
           keyWordState={onKeyWord}

@@ -1,9 +1,12 @@
 .Movies {
+  background: transparent;
+  backdrop-filter: blur(100px);
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.Movies-main {
+.Movies_main {
   flex: 1 1 auto;
 }

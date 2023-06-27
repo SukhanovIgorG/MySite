@@ -1,3 +1,4 @@
 .container {
-  background: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+  background: transparent;
+  backdrop-filter: blur(100px);
 }
