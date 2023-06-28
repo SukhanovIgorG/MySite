@@ -19,7 +19,8 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const usersRef = collection(db, 'users');
 let userId = localStorage.getItem('userId');
-const userRef = userId ? doc(db, 'users', userId) : null;
+const userRef = userId ? doc(db, 'users', userId) : null; // TODO: Рефы упорядочить
+
 
 export const fireBaseAuthApi = async ({
   type,
@@ -27,6 +28,7 @@ export const fireBaseAuthApi = async ({
   email,
   password,
 }) => {
+
   if (type === 'signup') {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -41,7 +43,7 @@ export const fireBaseAuthApi = async ({
       movies: [],
       createdAt: newUser.metadata.createdAt,
       creationTime: newUser.metadata.creationTime,
-    });
+    })
     return userCredential;
   }
   if (type === 'signin') {
@@ -54,30 +56,8 @@ export const fireBaseAuthApi = async ({
   }
 };
 
-export const registerApi = async ({name, email, password}) => {
-  console.log('registerApi :>> ');
-  const userCredential = await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
-  const newUser = userCredential.user;
-  setDoc(doc(usersRef, newUser.uid), {
-    name: name,
-    email: email,
-    password: password,
-    movies: [],
-    createdAt: newUser.metadata.createdAt,
-    creationTime: newUser.metadata.creationTime,
-  });
-  return newUser;
-};
-
-export const loginApi = ({email, password}) => {
-  return signInWithEmailAndPassword(auth, email, password);
-};
-
 export const getUserInfo = async () => {
+  const userRef = userId ? doc(db, 'users', userId) : null;
   const userInfo = userRef ? await getDoc(userRef) : null;
   if (userInfo.exists()) {
     return userInfo.data();
@@ -86,20 +66,40 @@ export const getUserInfo = async () => {
   }
 };
 
-export const updateUser = async (name) => {
-  return await updateDoc(userRef, {
-    name: name,
-  });
+export const updateUser = async (name, email) => {
+  try {
+    const userRef = userId ? doc(db, 'users', userId) : null;
+    return await updateDoc(userRef, {
+      name: name,
+      email: email,
+    });
+  } catch (e) {
+    console.log('updateUser error :>> ', e.message);
+    throw new Error('User not updated');
+  }
+
 };
 
 export const likeMovies = async (name) => {
-  return await updateDoc(userRef, {
-    movies: arrayUnion(name),
-  });
+  console.log('likeMovies name :>> ', name);
+  try {
+    return await updateDoc(userRef, {
+      movies: arrayUnion(name),
+    });
+  } catch (e) {
+    console.log('likeMovies error :>> ', e.message);
+    throw new Error('Movie not liked');
+  }
+
 };
 
 export const disLakeMovies = async (name) => {
-  await updateDoc(userRef, {
-    movies: arrayRemove(name),
-  });
+  try {
+    await updateDoc(userRef, {
+      movies: arrayRemove(name),
+    });
+  } catch (e) {
+    console.log('disLakeMovies error :>> ', e.message);
+    throw new Error('Movie not disliked');
+  }
 };

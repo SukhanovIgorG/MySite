@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import {useNavigate, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Search from './Search/Search';
@@ -14,9 +13,6 @@ import styles from './Movies.module.scss'
 
 export const Movies = ({
   isLoading,
-  menuStatus,
-  menuOpen,
-  menuClose,
   savedMoviesStatus,
   onMovies,
   onMoviesSave,
@@ -39,9 +35,7 @@ export const Movies = ({
   // REDUX
   const dispatch = useDispatch();
   const saveMoviesRedux = useSelector((state) => state.movies);
-  console.log('saveMoviesRedux :>> ', saveMoviesRedux);
 
-  const navigate = useNavigate();
   let movies = savedMoviesStatus
     ? Array.from(saveMoviesRedux)
     : Array.from(onMovies);
@@ -102,10 +96,7 @@ export const Movies = ({
           />
         )}
 
-        {movies.length === 0 ? (
-          <div></div>
-        ) : (
-          // <Preloader onLoading={false} message={"ничего не найдено"} />
+        {movies.length !== 0 &&
           <MoviesList
             savedMoviesStatus={savedMoviesStatus}
             movies={savedMoviesStatus ? onMoviesSave : onMovies}
@@ -117,14 +108,14 @@ export const Movies = ({
           >
             <button
               className={
-                buttonStatus ? 'movies-list__button_off' : 'movies-list__button'
+                buttonStatus ? styles.button_off : styles.button
               }
               onClick={onMoreMovies}
             >
               Еще
             </button>
           </MoviesList>
-        )}
+        }
       </main>
       <Footer />
     </div>

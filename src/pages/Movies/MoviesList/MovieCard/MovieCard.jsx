@@ -1,4 +1,5 @@
 import {useMemo} from 'react';
+import style from './MovieCard.module.scss'
 
 function MovieCard({movie, savedMoviesStatus, onLike, onDelete, saveMovies}) {
   let setMovie = movie ? movie : {};
@@ -18,36 +19,36 @@ function MovieCard({movie, savedMoviesStatus, onLike, onDelete, saveMovies}) {
   };
 
   return (
-    <li className="card">
+    <li className={style.main}>
       <a
         href={setMovie.trailerLink}
         target="_blanc"
       >
         <img
-          className="card__image"
+          className={style.image}
           src={`https://api.nomoreparties.co/${setMovie.image.url}`}
           alt={movie.nameRU}
         />
       </a>
 
-      <div className="card__info">
-        <div className="card__info-container">
-          <h2 className="card__title">{setMovie.nameRU}</h2>
-          <p className="card__duration">{`${Math.floor(
+      <div className={style.info}>
+        <div className={style.info_container}>
+          <h2 className={style.title}>{setMovie.nameRU}</h2>
+          <p className={style.duration}>{`${Math.floor(
             setMovie.duration / 60
           )}ч ${setMovie.duration % 60}м `}</p>
         </div>
         {savedMoviesStatus && (
           <button
             type="button"
-            className="card__trash"
+      className={style.trash}
             onClick={handleLikeOrDell}
           />
         )}
         {!savedMoviesStatus && (
           <button
             type="button"
-            className={isLiked ? 'card__like card__like_active' : 'card__like'}
+            className={!isLiked ? style.like_not_active : style.like_active}
             onClick={handleLikeOrDell}
           />
         )}

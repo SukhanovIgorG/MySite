@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
-import {CheckBox} from '../../../components';
+import { CheckBox } from '../../../components';
+
+import style from './Search.module.scss'
 
 function Search({
   savedMoviesStatus,
@@ -78,14 +80,14 @@ function Search({
   };
 
   return (
-    <section className="search">
+    <section className={style.main}>
       <form
-        className="search__area"
+        className={style.area}
         noValidate
         onSubmit={handleSearch}
       >
         <input
-          className="search__input"
+          className={style.input}
           type="string"
           placeholder="Фильм"
           aria-label="search movies"
@@ -102,29 +104,23 @@ function Search({
           required
         />
         <button
-          className="search__button"
+          className={style.button}
           onClick={handleSearch}
         >
           Найти
         </button>
       </form>
 
-      {validMess ? <p className="search__span">{validMess}</p> : ''}
+      {validMess ? <p className={style.span}>{validMess}</p> : ''}
 
-      <div className="search__option-container">
-        {/* <button
-          className={
-            buttonState ? 'search__option-button' : 'search__option-button_off'
-          }
-          onClick={savedMoviesStatus ? handleShortSave : handleShort}
-        ></button> */}
+      <div className={style.option_container}>
         <CheckBox
           savedMoviesStatus={savedMoviesStatus}
           handleShortSave={handleShortSave}
           handleShort={handleShort}
           buttonState={buttonState}
         ></CheckBox>
-        <span className="search__option-span">Короткометражки</span>
+        <span className={style.option_span}>Короткометражки</span>
       </div>
     </section>
   );

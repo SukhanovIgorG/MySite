@@ -1,0 +1,17 @@
+.container {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  .load_image {
+    width: 50px;
+    padding-bottom: 50px;
+  }
+  .message {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+    color: #ffffff;
+  }
+}
+

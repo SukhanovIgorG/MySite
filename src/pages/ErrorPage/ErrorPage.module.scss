@@ -1,17 +1,17 @@
-.error-page {
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.error-page__container  {
+.container  {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 32vh;
 }
 
-.error-page__code {
+.code {
   margin: 0;
   
   font-style: normal;
@@ -23,7 +23,7 @@
   color: #000000;
 }
 
-.error-page__message {
+.message {
   margin: 0;
 
   padding-top: 5px;
@@ -37,7 +37,7 @@
   color: #000000;
 }
 
-.error-page__back {
+.back {
   padding-top: 26vh;
   
   font-style: normal;
@@ -52,21 +52,21 @@
 }
 
 @media screen and (max-width: 768px){
-  .error-page__container {
+  .container {
     padding-top: 51vh;
   }
 }
 
 @media screen and (max-width: 420px){
-  .error-page__code {
+  .code {
     font-size: 80px;
     line-height: 97px;
   }
-  .error-page__message {
+  .message {
     font-size: 12px;
     line-height: 15px;
   }
-  .error-page__container {
+  .container {
     padding-top: 43vh;
   }
 }

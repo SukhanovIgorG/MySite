@@ -10,3 +10,29 @@
 .Movies_main {
   flex: 1 1 auto;
 }
+
+.button {
+  align-self: center;
+  margin-top: 78px;
+  margin-bottom: -82px;
+
+  width: 320px;
+  height: 36px;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  color: #fffafa;
+}
+.button_off {
+  visibility: hidden;
+  display: none; 
+}

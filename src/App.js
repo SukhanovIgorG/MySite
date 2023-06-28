@@ -1,8 +1,6 @@
 import {useState, useEffect, useCallback} from 'react';
 import {Route, Routes, HashRouter} from 'react-router-dom';
 
-import {Header} from './components';
-
 import {getMovies} from './api/MoviesApi';
 import {getUserInfo} from './api/MainApi';
 import {CurrentUserContext} from './context/CurrentUserContext';
@@ -19,7 +17,7 @@ import {
 } from './constants/constants';
 
 // COMPONENTS
-import {Movies, Profile, MyProfile, Dialog, Register, Landing, ErrorPage} from './pages';
+import {Movies, MyProfile, Dialog, Landing, ErrorPage} from './pages';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 import styles from './App.module.scss';
@@ -293,9 +291,6 @@ function App() {
                 path="/movies"
                 element={
                   <Movies
-                    menuOpen={handlerOpenMenu}
-                    menuClose={handlerCloseMenu}
-                    menuStatus={menuVisible}
                     isLoading={loading}
                     onMovies={renderMovies}
                     onMoviesSave={renderSavedMovies}
@@ -329,9 +324,6 @@ function App() {
                 path="/saved-movies"
                 element={
                   <Movies
-                    menuOpen={handlerOpenMenu}
-                    menuClose={handlerCloseMenu}
-                    menuStatus={menuVisible}
                     isLoading={loading}
                     onMovies={renderMovies}
                     onMoviesSave={renderSavedMovies}
@@ -366,13 +358,6 @@ function App() {
                 exact
                 path="/profile"
                 element={
-                  // <Profile
-                  //   menuOpen={handlerOpenMenu}
-                  //   menuClose={handlerCloseMenu}
-                  //   menuStatus={menuVisible}
-                  //   onSetCurrentUser={setCurrentUserHandler}
-                  //   logOut={handleLogOut}
-                  // />
                   <MyProfile
                     setCurrentUser={setCurrentUserHandler}
                     onLogOut={handleLogOut}

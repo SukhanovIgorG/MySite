@@ -6,6 +6,6 @@ export interface MyProfileFormInput {
 }
 
 export interface MyProfileProps {
-  onLogOut: (status: boolean) => void
+  onLogOut: () => void
   setCurrentUser: (user: UserFB) => void
 }
