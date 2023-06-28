@@ -1,4 +1,4 @@
-.movies-list {
+.main {
   padding-top: 80px;
   padding-left: 0;
   padding-right: 0;
@@ -16,39 +16,39 @@
   row-gap: 20px;
 }
 
-.movies-list__container {
+.container {
   display: flex;
   flex-direction: column;
   padding-bottom: 182px;
 }
 
-.movies-list__button {
-  align-self: center;
-  /* margin-top: 45px;
-  margin-bottom: 76px; */
-  margin-top: 78px;
-  margin-bottom: -82px;
+// .button {
+//   align-self: center;
+//   /* margin-top: 45px;
+//   margin-bottom: 76px; */
+//   margin-top: 78px;
+//   margin-bottom: -82px;
 
-  width: 320px;
-  height: 36px;
-  background-color: rgba(0,0,0,0);
-  border: 1px solid #E8E8E8;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+//   width: 320px;
+//   height: 36px;
+//   background-color: rgba(0,0,0,0);
+//   border: 1px solid #E8E8E8;
+//   border-radius: 4px;
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 12px;
+//   line-height: 15px;
+//   display: flex;
+//   align-items: center;
+//   text-align: center;
+//   justify-content: center;
 
-  color: #000000;
-}
-.movies-list__button_off {
-  visibility: hidden;
-  display: none; 
-}
+//   color: #000000;
+// }
+// .button_off {
+//   visibility: hidden;
+//   display: none; 
+// }
 
 @media screen and (max-width: 1279px) {
 
@@ -70,7 +70,7 @@
     margin: 0 14px;
   }
 
-  .movies-list__button {
+  .button {
     margin-top: 70px;
     width: 240px;
     height: 36px;

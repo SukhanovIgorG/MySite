@@ -1,4 +1,5 @@
 import MovieCard from './MovieCard/MovieCard';
+import style from './MoviesList.module.scss'
 
 function MoviesList({
   movies,
@@ -11,8 +12,8 @@ function MoviesList({
   saveMovies,
 }) {
   return (
-    <section className="movies-list__container">
-      <ul className="movies-list">
+    <section className={style.container}>
+      <ul className={style.main}>
         {Array.isArray(movies)
           ? movies.map((movie) => (
               <MovieCard

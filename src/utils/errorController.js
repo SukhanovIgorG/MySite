@@ -1,4 +1,5 @@
 export function apiErrorController(err) {
+  console.log('err :>> ', err);
   if (err.code === 'auth/user-not-found') {
     return 'не правильный логин или пароль';
   } else if (err.code === 'auth/email-already-in-use') {

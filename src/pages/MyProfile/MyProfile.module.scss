@@ -18,8 +18,12 @@
     color: #fff;
     text-align: center;
   }
+  .button_logout {
+    position: absolute;
+    bottom: 5%;
+  }
 }
-
+  
 .header_logo {
   position: absolute;
   top: 20px;
@@ -164,6 +168,8 @@ select:-webkit-autofill:focus {
   height: 40px;
   border: none;
   border-radius: 40px;
+
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
