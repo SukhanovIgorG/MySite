@@ -8,9 +8,9 @@
     "target": "es5",
     "noEmit": true,
     "resolveJsonModule": true,
-    "resolveUrlLoader": {
-      "keepQuery": true
-    },
+    // "resolveUrlLoader": {
+    //   "keepQuery": true
+    // },
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

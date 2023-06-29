@@ -13,7 +13,7 @@ import { updateUser } from '../../api/MainApi';
 import { apiErrorController } from '../../utils/errorController';
 import {CurrentUserContext} from '../../context/CurrentUserContext';
 
-import { UserFB } from '../../types';
+// import { UserFB } from '../../types';
 import { MyProfileFormInput, MyProfileProps } from './myProfile.d';
 import { schema } from './shema';
 
@@ -22,9 +22,8 @@ import style from './MyProfile.module.scss';
 export const MyProfile = ({ onLogOut, setCurrentUser }: MyProfileProps) => {
   const formId = useId()
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const currentUser = useContext(CurrentUserContext);
-console.log('currentUser :>> ', currentUser);
   const [errorApi, setErrorApi] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -52,7 +51,7 @@ console.log('currentUser :>> ', currentUser);
     updateUser(name, email)
       .then((userCredential: any) => {
         // const user: UserFB = userCredential.user;
-        console.log('userCredential :>> ', userCredential);
+        // console.log('userCredential :>> ', userCredential);
         // setCurrentUser(user);
         setIsLoading(false);
         setErrorApi('Данные успешно изменены')

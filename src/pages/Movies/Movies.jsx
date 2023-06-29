@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import Search from './Search/Search';
@@ -27,18 +27,19 @@ export const Movies = ({
   onChangeShortSave,
   onMoreMovies,
   buttonStatus,
-  onRender,
+  // onRender,
   onReset,
   onCatch,
   onSetCatch,
 }) => {
   // REDUX
-  const dispatch = useDispatch();
-  const saveMoviesRedux = useSelector((state) => state.movies);
+  // const dispatch = useDispatch();
+  // const saveMoviesRedux = useSelector((state) => state.movies);
 
-  let movies = savedMoviesStatus
-    ? Array.from(saveMoviesRedux)
-    : Array.from(onMovies);
+  let movies = useMemo(() => {
+    return Array.from( savedMoviesStatus ? onMoviesSave : onMovies);
+  }, [onMovies, onMoviesSave, savedMoviesStatus]
+  )
 
   useEffect(() => {
     onReset();
@@ -48,8 +49,6 @@ export const Movies = ({
   async function Like(arg) {
     await likeMovies(arg)
       .then(() => {
-        dispatch({type: 'add_like', payload: arg});
-        onRender(1);
       })
       .catch(() => {
         onSetCatch('Проблемы с тырнетом');
@@ -59,8 +58,6 @@ export const Movies = ({
   async function disLike(arg) {
     await disLakeMovies(arg)
       .then(() => {
-        dispatch({type: 'del_like', payload: arg});
-        onRender(1);
       })
       .catch(() => {
         onSetCatch('Проблемы с тырнетом');
@@ -99,12 +96,10 @@ export const Movies = ({
         {movies.length !== 0 &&
           <MoviesList
             savedMoviesStatus={savedMoviesStatus}
-            movies={savedMoviesStatus ? onMoviesSave : onMovies}
+            movies={movies}
             saveMovies={onMoviesSave}
             addLike={Like}
             deleteLike={disLike}
-            render={onMovies}
-            onRender={onRender}
           >
             <button
               className={

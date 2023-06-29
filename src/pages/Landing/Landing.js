@@ -7,7 +7,7 @@ import {Portfolio} from './Portfolio';
 
 import style from './Landing.module.scss';
 
-export const Landing = ({loggedIn, login, menuOpen, menuClose, menuStatus}) => {
+export const Landing = ({loggedIn}) => {
   return (
     <Box className={style.container}>
       <Header loggedIn={loggedIn} />

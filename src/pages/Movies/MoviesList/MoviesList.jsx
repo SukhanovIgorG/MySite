@@ -11,6 +11,7 @@ function MoviesList({
   onRender,
   saveMovies,
 }) {
+
   return (
     <section className={style.container}>
       <ul className={style.main}>
@@ -27,7 +28,7 @@ function MoviesList({
                 onRender={onRender}
               />
             ))
-          : console.log('нет карт для отображения')}
+          : null}
       </ul>
       {children}
     </section>

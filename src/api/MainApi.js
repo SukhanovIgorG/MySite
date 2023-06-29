@@ -80,11 +80,11 @@ export const updateUser = async (name, email) => {
 
 };
 
-export const likeMovies = async (name) => {
-  console.log('likeMovies name :>> ', name);
+export const likeMovies = async (movie) => {
+  console.log('likeMovies name :>> ', movie);
   try {
     return await updateDoc(userRef, {
-      movies: arrayUnion(name),
+      movies: arrayUnion(movie),
     });
   } catch (e) {
     console.log('likeMovies error :>> ', e.message);
@@ -93,10 +93,10 @@ export const likeMovies = async (name) => {
 
 };
 
-export const disLakeMovies = async (name) => {
+export const disLakeMovies = async (movie) => {
   try {
     await updateDoc(userRef, {
-      movies: arrayRemove(name),
+      movies: arrayRemove(movie),
     });
   } catch (e) {
     console.log('disLakeMovies error :>> ', e.message);

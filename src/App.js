@@ -42,18 +42,8 @@ function App() {
     localStorage.getItem('JWT') ? true : false
   );
   const [currentUser, setCurrentUser] = useState({});
-  const [menuVisible, setMenuVisible] = useState(false);
   const [firstStart, setFirstStart] = useState(false);
   const [catchMessage, setCatchMessage] = useState('');
-  const [render, setRender] = useState('0');
-
-  // MENU OPEN/CLOSE
-  const handlerOpenMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
-  const handlerCloseMenu = () => {
-    setMenuVisible(false);
-  };
 
   const sliceMovieList = () => {
     setRenderMovies(searchMovies.slice(0, startCounter));
@@ -127,8 +117,9 @@ function App() {
       getData();
     } else {
       console.log('авторизация не выполнена');
+      handleLogOut();
     }
-  }, [loggedIn, render, screenControl, jwt]);
+  }, [loggedIn, screenControl, jwt]);
 
   useEffect(() => {
     sliceMovieList();
@@ -235,12 +226,8 @@ function App() {
     setShortSave(false);
   };
 
-  const handlerRender = (arg) => {
-    setRender((prev) => Number(prev) + Number(arg));
-  };
-
   return (
-    <div className={styles.App} >
+    <div className={styles.App}>
       <CurrentUserContext.Provider value={currentUser}>
         <HashRouter>
           <Routes>
@@ -271,15 +258,7 @@ function App() {
             <Route
               exact
               path="/"
-              element={
-                <Landing
-                  loggedIn={loggedIn}
-                  menuOpen={handlerOpenMenu}
-                  menuClose={handlerCloseMenu}
-                  logOut={handleLogOut}
-                  menuStatus={menuVisible}
-                />
-              }
+              element={<Landing loggedIn={loggedIn} />}
             />
             <Route
               exact
@@ -306,7 +285,6 @@ function App() {
                     onChangeShortSave={setShortSave}
                     onMoreMovies={handleMoreMovies}
                     buttonStatus={searchMovies.length === renderMovies.length}
-                    onRender={handlerRender}
                     onReset={onResetSavedMoviesSearch}
                     onCatch={catchMessage}
                     onSetCatch={setCatchMessage}
@@ -342,9 +320,6 @@ function App() {
                     onReset={onResetSavedMoviesSearch}
                     onCatch={catchMessage}
                     onSetCatch={setCatchMessage}
-                    onRender={(arg) => {
-                      setRender((prev) => prev + arg);
-                    }}
                   />
                 }
               />
@@ -361,7 +336,7 @@ function App() {
                   <MyProfile
                     setCurrentUser={setCurrentUserHandler}
                     onLogOut={handleLogOut}
-                  /> 
+                  />
                 }
               />
             </Route>
